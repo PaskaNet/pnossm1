@@ -1,3 +1,4 @@
+
 /* General Body & Root Styles */
 body {
   margin: 0;
@@ -20,12 +21,12 @@ body {
                       url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M 20 20 L 80 20 L 80 80 L 20 80 Z M 30 30 L 70 30 L 70 70 L 30 70 Z" fill="rgba(255,255,255,0.03)"/></svg>');
     position: relative;
     overflow: hidden;
-    transition: transform 0.2s ease-in-out;
-    transform-origin: top left;
+    display: flex;
+    flex-direction: column;
 }
 
 .paskanet-icon {
-    color: #0078d7;
+    color: #fff;
 }
 
 /* Login Screen */
@@ -116,7 +117,7 @@ body {
 /* Desktop Icons */
 .desktop-icons-container {
     position: absolute;
-    top: 20px;
+    top: 50px;
     left: 20px;
     display: flex;
     flex-direction: column;
@@ -136,10 +137,13 @@ body {
 .desktop-icon-img {
     width: 42px;
     height: 42px;
-    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.desktop-icon-img .icon {
+    width: 100%;
+    height: 100%;
 }
 .desktop-icon-label {
     color: white;
@@ -271,7 +275,8 @@ body {
 /* App-level Menu Bar */
 .menu-bar-app-level {
   display: flex;
-  background-color: #f0f0f0;
+  background-color: #1f1f1f;
+  color: white;
   padding: 0;
   position: absolute;
   top: 0;
@@ -279,6 +284,7 @@ body {
   width: 100%;
   z-index: 900;
   height: 30px;
+  flex-shrink: 0;
 }
 .menu-item {
   padding: 4px 12px;
@@ -289,7 +295,7 @@ body {
   align-items: center;
 }
 .menu-item:hover {
-  background-color: #d9d9d9;
+  background-color: #333;
 }
 .menu-dropdown {
   position: absolute;
@@ -312,6 +318,7 @@ body {
   white-space: nowrap;
   display: flex;
   align-items: center;
+  color: #000; /* FIX: Ensure text is readable */
 }
 .dropdown-item:hover { background-color: #cce8ff; }
 
@@ -319,9 +326,11 @@ body {
 .window-body {
     padding: 10px;
     flex-grow: 1;
-    overflow-y: auto;
+    overflow: auto;
     background-color: #fff;
     font-size: 14px;
+    display: flex;
+    flex-direction: column;
 }
 .window-body h2 {
     margin-top: 0;
